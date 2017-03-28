@@ -1,0 +1,20 @@
+{
+    "bridge": {
+        "name": "realank home",
+        "username": "CC:22:3D:E3:CE:23",
+        "port": 51811,
+        "pin": "123-45-678"
+    },
+    
+    "description": "This is an example configuration file with one fake accessory and one fake platform. You can use this as a template for creating your own configuration file containing devices you actually own.",
+
+    "accessories": [
+    {
+      "accessory": "Dummy",
+      "name": "Realank Lamp"
+    }
+  ],
+
+    "platforms": [
+  ]
+}
