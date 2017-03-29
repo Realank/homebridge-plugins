@@ -4,11 +4,11 @@ var SwithSer,switchOn = true;
 module.exports = function(homebridge){
 	Service = homebridge.hap.Service;
 	Characteristic = homebridge.hap.Characteristic;
-	homebridge.registerAccessory("homebridge-dummy", "Dummy", HttpDummy, true);
+	homebridge.registerAccessory("homebridge-dummy", "Dummy", DummyAccessory, true);
 }
 
 //create accessory class
-function HttpDummy(log, config) {
+function DummyAccessory(log, config) {
 	this.log = log;
 	//realtime polling info
 	this.switchState = false;
@@ -18,7 +18,7 @@ function HttpDummy(log, config) {
 	this.motionState = false;
 }
 
-HttpDummy.prototype = {
+DummyAccessory.prototype = {
 
 	//status input/output for light
 	setSwitchPowerState: function(powerOn, callback) {
@@ -72,7 +72,7 @@ HttpDummy.prototype = {
 
 		// you can OPTIONALLY create an information service if you wish to override
 		// the default values for things like serial number, model, etc.
-		var informationService = new Service.AccessoryInformation();
+		var informationService = new Service.AccessoryInformation(this.name);
 
 		informationService
 		.setCharacteristic(Characteristic.Manufacturer, "Dummy Manufacturer")
