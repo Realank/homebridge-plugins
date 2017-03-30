@@ -33,8 +33,6 @@ function DummyPlatform(log, config, api) {
 		// Or start discover new accessories
 		this.api.on('didFinishLaunching', function() {
 			this.log("DidFinishLaunching");
-			// console.log("==========type of api " + Object.keys(this));
-			this.log("-=======type: " + Object.keys(api.hap));
 			this.addAccessory();
 		}.bind(this));
   }
